@@ -62,11 +62,9 @@ export default function App() {
           <View style= {{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            padding: 55,
+            paddingTop: 75,
+            backgroundColor: '#000'
           }}>
-            <Button icon={'retweet'} onPress={() => {
-              setType(type === CameraType.back ? CameraType.front : CameraType.back)
-            }} />
             <Button icon={'flash'} 
               color={flash === Camera.Constants.FlashMode.off ? '#808080' : '#f1f1f1'}
               onPress={() => {
@@ -75,6 +73,11 @@ export default function App() {
                   : Camera.Constants.FlashMode.off
                   )
             }}/>
+            <Button icon={'user'} onPress={() => {
+            }} />
+            <Button icon={'retweet'} onPress={() => {
+              setType(type === CameraType.back ? CameraType.front : CameraType.back)
+            }} />
           </View>
         </Camera>
         :
@@ -105,6 +108,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 50,
   },
+
+
   camera: {
     flex:1,
     borderRadius: 20,
