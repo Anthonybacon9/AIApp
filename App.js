@@ -4,7 +4,10 @@ import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import Button from './src/components/Button';
 
+
 export default function App() {
+  //const [isModelLoading, setIsModelLoading] = useState(false)
+  //const [model, setModel] = useState(null)
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
