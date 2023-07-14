@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import Button from '../Button';
-import Clarifai from 'clarifai';
+//import Clarifai from 'clarifai';
 
-const app = new Clarifai.App({
-  apiKey: 'f337456f3841410898eb5e0c04a8e61e',
-});
+//const app = new Clarifai.App({
+  //apiKey: 'f337456f3841410898eb5e0c04a8e61e',
+//});
 
 export default function CameraScreen() {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -30,7 +30,7 @@ export default function CameraScreen() {
         const data = await cameraRef.current.takePictureAsync();
         console.log(data);
         setImage(data.uri);
-        analyzeImage(data.uri);
+        //analyzeImage(data.uri);
       } catch (e) {
         console.log(e);
       }
@@ -49,15 +49,6 @@ export default function CameraScreen() {
     }
   };
 
-  const analyzeImage = async (uri) => {
-    try {
-      const response = await app.models.predict('dog-breeds-classifier', uri);
-      console.log(response);
-      // Process the response and display the results
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
   if (hasCameraPermission === false) {
     return <Text>No Access to camera</Text>;

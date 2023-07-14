@@ -14,6 +14,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "packagerOpts": {
+      "config": {
+        "maxAssetSize": 52428800
+      }
+    },
     "ios": {
       "supportsTablet": true
     },
